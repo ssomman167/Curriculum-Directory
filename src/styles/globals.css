@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --theme-gradient-heat: #c20ea1, #dd2d7f, #ee4c5e, #f46d41;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, var(--theme-gradient-heat));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blinking-cursor {
+  margin-left: 2px;
+  background-color: #fff;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.1%,
+  100% {
+    opacity: 0;
+  }
+}
+
+input,
+textarea {
+  background: field !important;
+  color: inherit;
+}
